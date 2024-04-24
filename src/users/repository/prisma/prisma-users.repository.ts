@@ -1,5 +1,5 @@
 import { User } from '../../entities/user.entity';
-import { PrismaService } from '../../../prisma/prisma.service';
+import { PrismaService } from '../../../infra/prisma/prisma.service';
 import { UsersRepository } from '../users.repository';
 import { Injectable, NotFoundException } from '@nestjs/common';
 
