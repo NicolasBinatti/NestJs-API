@@ -1,9 +1,37 @@
 version: '3'
 
 services:
-  app:
-    build: .
+#  app:
+#    image: node:20
+#    container_name: nodejs
+#    working_dir: /app/node
+#    build: .
+#    volumes:
+#      - .:/app/node
+#    ports:
+#      - "3000:3000"
+##    command:
+##      - "nest start watch"
+#    depends_on:
+#      - mongodb
+
+#  mongodb:
+#    image: mongo
+#    container_name: mongodb
+#    ports:
+#      - "27017:27017"
+#    volumes:
+#      - .:/app/db
+#    environment:
+#      MONGO_INITDB_ROOT_USERNAME: user
+#      MONGO_INITDB_ROOT_PASSWORD: pass
+
+  postgres:
+    container_name: pg_sql
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
     ports:
-      - 3000:3000
-    volumes:
-      - .:/home/node/app
+      - "5432:5432"
